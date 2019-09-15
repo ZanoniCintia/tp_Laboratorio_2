@@ -45,6 +45,16 @@ namespace MiCalculadora
             Application.Exit();
         }
 
+        private void ButtonBinario_Click(object sender, EventArgs e)
+        {
+            Numero numeroUno = new Numero(labelResultado.Text);
+            this.labelResultado.Text = numeroUno.DecimalBinario(labelResultado.Text);
+        }
 
+        private void ButtonDecimal_Click(object sender, EventArgs e)
+        {
+            Numero numeroUno = new Numero(labelResultado.Text);
+            this.labelResultado.Text =numeroUno.BinarioDecimal(labelResultado.Text);
+        }
     }
 }

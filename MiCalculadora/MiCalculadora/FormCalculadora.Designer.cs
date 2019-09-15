@@ -81,6 +81,7 @@
             this.buttonBinario.TabIndex = 3;
             this.buttonBinario.Text = "Convertir a binario";
             this.buttonBinario.UseVisualStyleBackColor = true;
+            this.buttonBinario.Click += new System.EventHandler(this.ButtonBinario_Click);
             // 
             // buttonDecimal
             // 
@@ -91,6 +92,7 @@
             this.buttonDecimal.TabIndex = 4;
             this.buttonDecimal.Text = "Convertir a decimal";
             this.buttonDecimal.UseVisualStyleBackColor = true;
+            this.buttonDecimal.Click += new System.EventHandler(this.ButtonDecimal_Click);
             // 
             // textNumeroDos
             // 
@@ -130,7 +132,7 @@
             // 
             this.labelResultado.AutoSize = true;
             this.labelResultado.Font = new System.Drawing.Font("Rockwell", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResultado.Location = new System.Drawing.Point(483, 77);
+            this.labelResultado.Location = new System.Drawing.Point(277, 50);
             this.labelResultado.Name = "labelResultado";
             this.labelResultado.Size = new System.Drawing.Size(134, 31);
             this.labelResultado.TabIndex = 8;

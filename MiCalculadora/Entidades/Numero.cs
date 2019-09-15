@@ -127,12 +127,14 @@ namespace Entidades
         /// <returns></returns>
         public string BinarioDecimal(string binario)
         {
-
-
-            return Convert.ToInt64(binario, 2).ToString();
-
-
-
+           for(int i=0;i<binario.Length;i++)
+            {
+                if(binario[i]!='0'&& binario[i]!='1')
+                {
+                    return "valor invalido";
+                }
+            }
+           return Convert.ToInt32(binario, 2).ToString();
         }
 
         /// <summary>
@@ -142,7 +144,16 @@ namespace Entidades
         /// <returns></returns>
         public string DecimalBinario(string numero)
         {
-            return Convert.ToByte(numero).ToString();
+            int numeros = int.Parse(numero);
+            string binario = "";
+            while(numeros>0)
+            {
+                binario = numeros % 2 + binario;
+            }
+
+            return binario;
+
+           // return Convert.ToByte(numero).ToString();
         }
 
         /// <summary>
