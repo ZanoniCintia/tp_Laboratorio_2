@@ -158,6 +158,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "calculadora";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora de Zanoni Cintia del curso 2°C";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ResumeLayout(false);

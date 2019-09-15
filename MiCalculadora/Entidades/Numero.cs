@@ -144,16 +144,13 @@ namespace Entidades
         /// <returns></returns>
         public string DecimalBinario(string numero)
         {
-            int numeros = int.Parse(numero);
-            string binario = "";
-            while(numeros>0)
+             string retorno = "valor invalido";
+            if(int.Parse(numero)>0 && int.Parse(numero)<256)
             {
-                binario = numeros % 2 + binario;
+                retorno= DecimalBinario(double.Parse(numero));
             }
-
-            return binario;
-
-           // return Convert.ToByte(numero).ToString();
+            return retorno;
+            
         }
 
         /// <summary>
@@ -163,7 +160,18 @@ namespace Entidades
         /// <returns></returns>
         public string DecimalBinario(double numero)
         {
-            return DecimalBinario(numero.ToString());
+          
+            string resultado = "";
+
+            do
+            {
+                resultado = (numero % 2) + resultado;
+                numero = (int)numero / 2;
+            } while (numero > 0);
+           
+            return resultado;
+            
+           // return DecimalBinario(numero.ToString());
         }
 
 
