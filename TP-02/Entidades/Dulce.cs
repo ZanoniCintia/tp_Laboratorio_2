@@ -8,11 +8,9 @@ namespace Entidades_2018
 {
     public class Dulce : Producto
     {
-        public Dulce(EMarca marca, string codigo, ConsoleColor color):base(codigo,marca,color)
-        {
-            
-        }
+       
 
+        #region Propiedades
         /// <summary>
         /// Los dulces tienen 80 calorías
         /// </summary>
@@ -23,8 +21,26 @@ namespace Entidades_2018
                 return 80;
             }
         }
+        #endregion
 
-        public override  string Mostrar()
+
+        #region Metodos
+
+        /// <summary>
+        /// constructor de la clase Dulce, reutiliza codigo de la clase base
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="codigo"></param>
+        /// <param name="color"></param>
+        public Dulce(EMarca marca, string codigo, ConsoleColor color) : base(codigo, marca, color)
+        {
+
+        }
+        /// <summary>
+        /// muestra caracteristicas de la clase Dulce, reutiliza codigo de la clase base
+        /// </summary>
+        /// <returns>string</returns>
+        public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
@@ -36,5 +52,7 @@ namespace Entidades_2018
 
             return sb.ToString();
         }
+        #endregion
+
     }
 }

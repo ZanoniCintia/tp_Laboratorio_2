@@ -10,25 +10,12 @@ namespace Entidades_2018
 {
     public class Leche : Producto
     {
+        #region Enum
         public enum ETipo { Entera, Descremada }
         ETipo tipo;
+        #endregion
 
-        /// <summary>
-        /// Por defecto, TIPO será ENTERA
-        /// </summary>
-        /// <param name="marca"></param>
-        /// <param name="patente"></param>
-        /// <param name="color"></param>
-        public Leche(EMarca marca, string codigo, ConsoleColor color)
-            : base(codigo,marca,color)
-        {
-            tipo = ETipo.Entera;
-        }
-
-        public Leche(EMarca marca, string codigo,ConsoleColor color,ETipo tipo) : this(marca, codigo, color)
-        {
-            this.tipo = tipo;
-        }
+        #region Propiedades
         /// <summary>
         /// Las leches tienen 20 calorías
         /// </summary>
@@ -39,8 +26,38 @@ namespace Entidades_2018
                 return 20;
             }
         }
+        #endregion
 
-        public override  string Mostrar()
+        #region Metodos
+        /// <summary>
+        /// Por defecto, TIPO será ENTERA
+        /// </summary>
+        /// reutiliza codigo de la clase base
+        /// <param name="marca"></param>
+        /// <param name="patente"></param>
+        /// <param name="color"></param>
+        public Leche(EMarca marca, string codigo, ConsoleColor color)
+            : base(codigo, marca, color)
+        {
+            tipo = ETipo.Entera;
+        }
+
+        /// <summary>
+        /// Constructor de la clase , reutiliza codigo y agrega tipo.
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="codigo"></param>
+        /// <param name="color"></param>
+        /// <param name="tipo"></param>
+        public Leche(EMarca marca, string codigo, ConsoleColor color, ETipo tipo) : this(marca, codigo, color)
+        {
+            this.tipo = tipo;
+        }
+        /// <summary>
+        /// muestra caracteristicas de la clase leche , reutiliza codigo de la clase base
+        /// </summary>
+        /// <returns>string</returns>
+        public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
@@ -53,5 +70,7 @@ namespace Entidades_2018
 
             return sb.ToString();
         }
+        #endregion
+
     }
 }

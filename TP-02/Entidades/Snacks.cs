@@ -8,10 +8,10 @@ namespace Entidades_2018
 {
     public class Snacks : Producto
     {
-        public Snacks(EMarca marca, string codigo, ConsoleColor color)
-            : base(codigo,marca,color)
-        {
-        }
+       
+        #region Propiedades
+
+        
         /// <summary>
         /// Los snacks tienen 104 calorías
         /// </summary>
@@ -22,7 +22,25 @@ namespace Entidades_2018
                 return 104;
             }
         }
+        #endregion
 
+        #region Metodos
+        /// <summary>
+        /// constructor de la clase Snack, reutiliza codigo del constructor de la clase base (Producto)
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="codigo"></param>
+        /// <param name="color"></param>
+        public Snacks(EMarca marca, string codigo, ConsoleColor color)
+            : base(codigo, marca, color)
+        {
+        }
+
+
+        /// <summary>
+        /// muestra caracteristicas de snaks, llama metodo mostrar de la clase base
+        /// </summary>
+        /// <returns>string</returns>
         public override  string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -35,5 +53,6 @@ namespace Entidades_2018
 
             return sb.ToString();
         }
+        #endregion
     }
 }

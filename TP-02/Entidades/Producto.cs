@@ -10,28 +10,38 @@ namespace Entidades_2018
     /// La clase Producto no deberá permitir que se instancien elementos de este tipo.
     /// </summary>
     public abstract class Producto
-    { 
+    {
+        #region enum
         public enum EMarca
         {
             Serenisima, Campagnola, Arcor, Ilolay, Sancor, Pepsico
         }
+        #endregion
+
+        #region Campos
         protected EMarca marca;
         private string codigoDeBarras;
         private ConsoleColor colorPrimarioEmpaque;
 
-        /// <summary>
+        #endregion
+
+        #region Propiedades
+        /// <summary>la clase No contiene calorias para retornar
         /// ReadOnly: Retornará la cantidad de ruedas del vehículo ???????
         /// </summary>
         protected virtual short CantidadCalorias
         {
             get;
-           
+
         }
 
+        #endregion
+
+        #region Metodos
         /// <summary>
         /// Publica todos los datos del Producto.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>string</returns>
         public virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -45,11 +55,15 @@ namespace Entidades_2018
 
         }
 
+        /// <summary>
+        /// devuelve un string con el metodo mostrar
+        /// </summary>
+        /// <param name="p"></param>
         public static explicit operator string(Producto p)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(p.Mostrar());
-           
+
             return sb.ToString();
         }
 
@@ -83,11 +97,19 @@ namespace Entidades_2018
             return !(v1.codigoDeBarras == v2.codigoDeBarras);
         }
 
-        public Producto(string codigo, EMarca marca,ConsoleColor color)
+        /// <summary>
+        /// Constructor de la clase 
+        /// </summary>
+        /// <param name="codigo"></param>
+        /// <param name="marca"></param>
+        /// <param name="color"></param>
+        public Producto(string codigo, EMarca marca, ConsoleColor color)
         {
             this.codigoDeBarras = codigo;
             this.marca = marca;
             this.colorPrimarioEmpaque = color;
         }
+        #endregion
+
     }
 }

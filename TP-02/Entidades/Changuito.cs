@@ -11,12 +11,18 @@ namespace Entidades_2018
     /// </summary>
     public sealed class Changuito
     {
+        #region Campos
         List<Producto> productos;
         private int espacioDisponible;
+        #endregion
+
+        #region Enum
         public enum ETipo
         {
             Dulce, Leche, Snacks, Todos
         }
+        #endregion
+
 
         #region "Constructores"
         private Changuito()
