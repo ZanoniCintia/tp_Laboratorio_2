@@ -66,15 +66,15 @@ namespace Entidades_2018
                 switch (tipo)
                 {
                     case ETipo.Snacks:
-                        if (tipo == ETipo.Snacks && producto1 is Snacks)
+                        if (producto1 is Snacks)
                         { sb.AppendLine(producto1.Mostrar()); }
                         break;
                     case ETipo.Dulce:
-                        if (tipo == ETipo.Dulce && producto1 is Dulce)
+                        if ( producto1 is Dulce)
                         { sb.AppendLine(producto1.Mostrar()); }
                         break;
                     case ETipo.Leche:
-                        if (tipo == ETipo.Leche && producto1 is Leche)
+                        if (producto1 is Leche)
                         { sb.AppendLine(producto1.Mostrar()); }
                         break;
                 

@@ -10,9 +10,16 @@ namespace Entidades_2018
 {
     public class Leche : Producto
     {
+        #region Campos
+        ETipo tipo = ETipo.Entera;
+        #endregion
+
         #region Enum
-        public enum ETipo { Entera, Descremada }
-        ETipo tipo;
+        public enum ETipo
+        {   Entera,
+            Descremada
+        }
+        
         #endregion
 
         #region Propiedades
@@ -39,7 +46,7 @@ namespace Entidades_2018
         public Leche(EMarca marca, string codigo, ConsoleColor color)
             : base(codigo, marca, color)
         {
-            tipo = ETipo.Entera;
+            
         }
 
         /// <summary>

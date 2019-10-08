@@ -14,7 +14,12 @@ namespace Entidades_2018
         #region enum
         public enum EMarca
         {
-            Serenisima, Campagnola, Arcor, Ilolay, Sancor, Pepsico
+            Serenisima,
+            Campagnola,
+            Arcor,
+            Ilolay,
+            Sancor,
+            Pepsico
         }
         #endregion
 
@@ -29,7 +34,7 @@ namespace Entidades_2018
         /// <summary>la clase No contiene calorias para retornar
         /// ReadOnly: Retornará la cantidad de ruedas del vehículo ???????
         /// </summary>
-        protected virtual short CantidadCalorias
+        protected abstract short CantidadCalorias
         {
             get;
 
@@ -74,12 +79,12 @@ namespace Entidades_2018
         /// 
         /// <param name="v2"></param>
         /// <returns></returns>
-        public static bool operator ==(Producto v1, Producto v2)
+        public static bool operator ==(Producto producto1, Producto producto2)
         {
             bool retorno = false;
-            if (!(v1 is null) && !(v2 is null))
+            if (!(producto1 is null) && !(producto2 is null))
             {
-                if (v1.codigoDeBarras == v2.codigoDeBarras)
+                if (producto1.codigoDeBarras == producto2.codigoDeBarras)
                 {
                     retorno = true;
                 }
@@ -92,9 +97,9 @@ namespace Entidades_2018
         /// <param name="v1"></param>
         /// <param name="v2"></param>
         /// <returns></returns>
-        public static bool operator !=(Producto v1, Producto v2)
+        public static bool operator !=(Producto producto1, Producto producto2)
         {
-            return !(v1.codigoDeBarras == v2.codigoDeBarras);
+            return !(producto1 == producto2);
         }
 
         /// <summary>
