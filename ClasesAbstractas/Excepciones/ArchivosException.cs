@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Excepciones
 {
-    public class ArchivosException
+    public class ArchivosException:Exception
     {
     }
 }
