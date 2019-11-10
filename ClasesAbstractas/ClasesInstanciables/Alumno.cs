@@ -43,21 +43,21 @@ namespace ClasesInstanciables
             return MostrarDatos();
         }
 
-        public static bool operator ==(Alumno a, Universidad.EClases clase)
+       /* public static bool operator ==(Alumno a, Universidad.EClases clase)
         {
             bool retorno = false;
-            if (a == clase && a.estadoCuenta == EEstadoCuenta.AlDia)
+            if ((a == clase) || (a.estadoCuenta == EEstadoCuenta.Deudor))
             {
-                retorno = true;
+                retorno= true;
             }
             return retorno;
 
-        }
+        }*/
 
-        public static bool operator !=(Alumno a, Universidad.EClases clase)
+       /* public static bool operator !=(Alumno a, Universidad.EClases clase)
         {
             return !(a == clase);
-        }
+        }*/
 
         protected override string ParticiparEnClase()
         {
