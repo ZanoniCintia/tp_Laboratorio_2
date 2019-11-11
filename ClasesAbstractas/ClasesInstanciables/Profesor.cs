@@ -17,7 +17,7 @@ namespace ClasesInstanciables
         protected override string ParticiparEnClase()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("CLASE DEL DIA : {0}");
+            sb.AppendLine("CLASE DEL DIA :");
             foreach (EClases clase in this.ClasesDelDia)
             {
                 sb.AppendFormat("{0} ", clase);

@@ -120,11 +120,11 @@ namespace ClasesInstanciables
             Profesor profesor = new Profesor();
             profesor = (g == clase);
             Jornada nuevaJornada = new Jornada(clase, profesor);
-            foreach (Alumno item in g.alumnos)
+            foreach (Alumno aux in g.alumnos)
             {
-                if (item == clase)
+                if (aux == clase)
                 {
-                    nuevaJornada.Alumnos.Add(item);
+                    nuevaJornada.Alumnos.Add(aux);
                 }
             }
             g.jornada.Add(nuevaJornada);
