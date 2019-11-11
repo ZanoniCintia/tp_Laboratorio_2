@@ -24,7 +24,7 @@ namespace ClasesAbstractas
 
                 return this.apellido;
             }
-            set { apellido = value; }
+            set { apellido = ValidarNombreApellido(value); }
         }
 
         public int DNI
@@ -33,7 +33,7 @@ namespace ClasesAbstractas
             {
                 return this.dni;
             }
-            set { dni = value; }
+            set { dni = ValidarDni(nacionalidad,value); }
         }
 
         public ENacionalidad Nacionalidad
@@ -53,7 +53,7 @@ namespace ClasesAbstractas
                 return this.nombre;
 
             }
-            set { nombre = value; }
+            set { nombre = ValidarNombreApellido(value); }
         }
 
         public string StringToDni
@@ -75,21 +75,21 @@ namespace ClasesAbstractas
         }
         public Persona(string nombre, string apellido, ENacionalidad nacionalidad)
         {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.nacionalidad = nacionalidad;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Nacionalidad = nacionalidad;
         }
 
         public Persona(string nombre, string apellido, int dni,
             ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
-            this.dni = dni;
+            this.DNI = dni;
         }
 
         public Persona(string nombre, string apellido, string dni,
-            ENacionalidad nacionalidad) : this(nombre, apellido, int.Parse(dni), nacionalidad)
+            ENacionalidad nacionalidad) : this(nombre, apellido,nacionalidad)
         {
-
+            this.StringToDni = dni;
 
         }
 
@@ -107,7 +107,7 @@ namespace ClasesAbstractas
             }
             else
             {
-                throw new DniInvalidoException();
+                throw new NacionalidadInvalidaException();
             }
 
             return retorno;
@@ -121,6 +121,7 @@ namespace ClasesAbstractas
             {
                 retorno = ValidarDni(nacionalidad, datoInt);
             }
+            else { throw new DniInvalidoException(); }
 
             return retorno;
         }
